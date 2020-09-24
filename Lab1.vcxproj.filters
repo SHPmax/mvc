@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\models">
+      <UniqueIdentifier>{d6574330-e1ca-4c45-840e-3f044c503828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\others">
+      <UniqueIdentifier>{14e8effa-c07c-4bff-b991-d362f9631219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\views">
+      <UniqueIdentifier>{38a6bea4-cb3e-466a-ac19-c528be3257cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controllers">
+      <UniqueIdentifier>{35b1f2d5-7d89-4cc7-a491-1f63ed37f17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\views\home">
+      <UniqueIdentifier>{bf410c52-49ac-4d53-85c3-cc2007f1808a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{b4c8a0ea-1e71-4251-8600-9dbd8084b296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\views\int_array">
+      <UniqueIdentifier>{31cf21b5-278a-4931-86b7-4f69125b46e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
+      <Filter>Source Files\others</Filter>
+    </ClInclude>
+    <ClInclude Include="models\array.h">
+      <Filter>Source Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="views\home\index.h">
+      <Filter>Source Files\views\home</Filter>
+    </ClInclude>
+    <ClInclude Include="controllers\home_controller.h">
+      <Filter>Source Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="base\base.h">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="mvc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\controller_helper.h">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="data_base.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\view_helper.h">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="controllers\int_array_controller.h">
+      <Filter>Source Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="views\int_array\show.h">
+      <Filter>Source Files\views\int_array</Filter>
+    </ClInclude>
+    <ClInclude Include="views\int_array\index.h">
+      <Filter>Source Files\views\int_array</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lab1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Lab1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Lab1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
