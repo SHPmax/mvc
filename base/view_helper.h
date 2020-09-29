@@ -16,8 +16,8 @@ public:
   static void cleanScrean(HWND hWnd) {
     EnumChildWindows(hWnd, DestoryChildCallback, NULL);
   }
-  static void CreateBtn(HWND hWnd, LPCTSTR name, const int x, const int y, const int width, const int height, UINT key) {
-    if (GetWindow(hWnd, key) == NULL) {
+  static void CreateBtn(HWND hWnd, LPCTSTR name, const int x, const int y, const int width, const int height, UINT key, BOOL update = false) {
+    if (update || GetWindow(hWnd, key) == NULL) {
       HWND hwndButton = CreateWindow(
         "BUTTON",  // Predefined class; Unicode assumed 
         name,      // Button text 
@@ -30,7 +30,7 @@ public:
         (HMENU)key,       // No menu.
         (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
         NULL);      // Pointer not needed.
-    }
+   }
   }
 
 

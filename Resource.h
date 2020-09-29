@@ -17,6 +17,7 @@
 #define IDC_STATIC				-1
 #endif
 // Next default values for new objects
+#define WM_HOME 99999
 #define IDC_INT_ARRAY 110
 #define IDC_INT_ARRAY_PUSH_BACK 111
 #define IDC_INT_ARRAY_PUSH_FRONT 112

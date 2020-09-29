@@ -8,7 +8,7 @@
 #define MAX_LOADSTRING 100
 
 // Global Variables:
-unsigned int Base::currentControllerName = 0;
+//unsigned int Base::currentControllerName = 0;
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
@@ -154,7 +154,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
   break;
   case WM_CREATE:
   {
-    Base::routing(hWnd, WM_CREATE);
+    Base::routing(hWnd, WM_HOME);
   }
   break;
   case WM_PAINT:

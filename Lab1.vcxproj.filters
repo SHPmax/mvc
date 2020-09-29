@@ -84,6 +84,9 @@
     <ClInclude Include="views\int_array\index.h">
       <Filter>Source Files\views\int_array</Filter>
     </ClInclude>
+    <ClInclude Include="base\rout.h">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab1.cpp">

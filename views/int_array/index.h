@@ -6,7 +6,7 @@ public:
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(hWnd, &ps);
 
-    //ViewHelper::Text(hdc, 300, 300, current_array->toString().c_str(), 2 * current_array->size() - 1);
+    //ViewHelper::Text(hdc, 300, 300, "cur", 3);
 
     ViewHelper::CreateBtn(hWnd, "New", 10, 10, 100, 50, IDC_INT_ARRAY_PUSH_BACK);
     ViewHelper::CreateBtn(hWnd, "Use", 120, 10, 100, 50, IDC_INT_ARRAY_PUSH_FRONT);

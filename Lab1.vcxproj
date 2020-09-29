@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="base\base.h" />
     <ClInclude Include="base\controller_helper.h" />
+    <ClInclude Include="base\rout.h" />
     <ClInclude Include="base\view_helper.h" />
     <ClInclude Include="controllers\int_array_controller.h" />
     <ClInclude Include="controllers\home_controller.h" />
