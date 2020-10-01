@@ -1,6 +1,9 @@
 #pragma once
+#include <algorithm>
 class ViewHelper {
 private:
+  static std::vector<HWND> btns;
+
   static BOOL CALLBACK DestoryChildCallback(
     HWND   hwnd,
     LPARAM lParam
@@ -12,13 +15,22 @@ private:
 
     return TRUE;
   }
+  static std::set<int> ids;
+  static BOOL btnExist(const int id) {
+    return  (std::find(ids.begin(), ids.end(), id) != ids.end());
+  }
 public:
   static void cleanScrean(HWND hWnd) {
+    ids.clear();
+    //btns.clear();
     EnumChildWindows(hWnd, DestoryChildCallback, NULL);
+    //InvalidateRect(hWnd, NULL, TRUE);
   }
-  static void CreateBtn(HWND hWnd, LPCTSTR name, const int x, const int y, const int width, const int height, UINT key, BOOL update = false) {
-    if (update || GetWindow(hWnd, key) == NULL) {
-      HWND hwndButton = CreateWindow(
+  static void CreateBtn(HWND hWnd, LPCTSTR name, const int x, const int y, const int width, const int height, UINT key, const int id, LPVOID pointer = NULL, BOOL update = false) {
+    if (update || !btnExist(id)) {
+      ids.insert(id);
+
+      HWND btn = CreateWindow(
         "BUTTON",  // Predefined class; Unicode assumed 
         name,      // Button text 
         WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
@@ -29,8 +41,8 @@ public:
         hWnd,     // Parent window
         (HMENU)key,       // No menu.
         (HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE),
-        NULL);      // Pointer not needed.
-   }
+        pointer);     // Pointer not needed.
+    }
   }
 
 
@@ -38,4 +50,7 @@ public:
     return TextOut(hdc, x, y, text, text_length);
   }
 };
+
+std::set<int> ViewHelper::ids{};
+std::vector<HWND> ViewHelper::btns{};
 

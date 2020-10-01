@@ -124,6 +124,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+  //CLIENTCREATESTRUCT* s; //declare pointer-to-struct variable
+  //s = (CLIENTCREATESTRUCT*)(LONG)lParam;    //assign integer value as pointer to struct
+
   switch (message)
   {
   case WM_COMMAND:
@@ -140,7 +143,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
       break;
     default:
     {
-      if (Base::routing(hWnd, wmId)) break;
+      if (Base::routing(hWnd, wmId, lParam)) break;
       return DefWindowProc(hWnd, message, wParam, lParam);
     }
     }
@@ -154,12 +157,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
   break;
   case WM_CREATE:
   {
-    Base::routing(hWnd, WM_HOME);
+    //SetWindowLong(hWnd, GWLP_HINSTANCE, (LONG)lParam);
+
+    //SetWindowLong(hWnd, GWL_USERDATA, (LONG)lParam);
+    Base::routing(hWnd, WM_HOME, lParam);
   }
   break;
   case WM_PAINT:
   {
-    Base::routing(hWnd, Base::currentMsg(), FALSE);
+    Base::routing(hWnd, Base::currentMsg(), lParam, FALSE);
   }
   break;
   case WM_DESTROY:

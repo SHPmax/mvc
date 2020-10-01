@@ -2,8 +2,9 @@
 class Base {
 private:
   static unsigned int currentControllerName;
+  static void cleanScr(HWND hWnd, const BOOL paint, const BOOL clean);
 public:
-  static bool routing(HWND hWnd, unsigned int message, const bool paint = TRUE);
+  static bool routing(HWND hWnd, unsigned int message, LPARAM pointer, const bool paint = TRUE);
 
 
   static void redirectTo(unsigned int message);
