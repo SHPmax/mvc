@@ -132,6 +132,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
   case WM_COMMAND:
   {
     int wmId = LOWORD(wParam);
+
     // Parse the menu selections:
     switch (wmId)
     {
@@ -143,7 +144,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
       break;
     default:
     {
-      if (Base::routing(hWnd, wmId, lParam)) break;
+      if (Base::routing(hWnd, wmId, message)) break;
       return DefWindowProc(hWnd, message, wParam, lParam);
     }
     }
@@ -160,12 +161,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     //SetWindowLong(hWnd, GWLP_HINSTANCE, (LONG)lParam);
 
     //SetWindowLong(hWnd, GWL_USERDATA, (LONG)lParam);
-    Base::routing(hWnd, WM_HOME, lParam);
+    Base::routing(hWnd, IDC_HOME, message);
   }
   break;
   case WM_PAINT:
   {
-    Base::routing(hWnd, Base::currentMsg(), lParam, FALSE);
+    Base::routing(hWnd, Base::currentMsg(), message, FALSE);
   }
   break;
   case WM_DESTROY:

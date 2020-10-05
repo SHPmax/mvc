@@ -165,6 +165,7 @@ namespace mx {
     }
 
     void popBack() {
+      if (isEmpty()) return;
       auto* temp = new T[length--];
       for (int i = 0; i < length; i++) {
         temp[i] = _array[i];
@@ -174,6 +175,7 @@ namespace mx {
     }
 
     void popFront() {
+      if (isEmpty()) return;
       auto* temp = new T[length--];
       for (int i = 0; i < length; i++) {
         temp[i] = _array[i + 1];

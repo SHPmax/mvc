@@ -1,15 +1,16 @@
 #pragma once
+#include <string>
 class IntArrayController {
 private:
+  //static std::vector<mx::Array<int>*> intArrays;
   static  mx::Array<int>* current_array;
 public:
   static void index(HWND hWnd) {//IDC_INT_ARRAY
-
-    if (DataBase::intArrays.empty()) DataBase::intArrays.push_back(new mx::Array<int>({1,2,4,4,5,5,5,5,5,5}));
-   //DataBase::intArrays.back()->pushBack(1);
-
-
     IntArrayIndexView::render(hWnd, DataBase::intArrays);
+  }
+
+  static void show(HWND hWnd) {
+    IntArrayShowView::render(hWnd, current_array);
   }
 
   static void newArray(HWND hWnd) {
@@ -18,17 +19,34 @@ public:
   }
 
   static void pushBack(HWND hWnd) {
-    //current_array->pushBack(1);
-    Base::redirectTo(WM_HOME);
+    int nRetVal = GetDlgItemInt(hWnd, EDIT_FIRST, 0, 0);
+    current_array->pushBack(nRetVal);
+    Base::redirectTo(IDC_INT_SHOW_ARRAY);
+  }
+  static void pushFront(HWND hWnd) {
+    int nRetVal = GetDlgItemInt(hWnd, EDIT_FIRST, 0, 0);
+    current_array->pushFront(nRetVal);
+    Base::redirectTo(IDC_INT_SHOW_ARRAY);
   }
 
-  static void deleteArray(HWND hWnd, LPARAM pointer) {
-   // current_array = (mx::Array<int>*)GetWindowLong(hWnd,);
-    //a->pushBack(1);
-    //CLIENTCREATESTRUCT *s; //declare pointer-to-struct variable
-    auto s = (CLIENTCREATESTRUCT*)pointer;
-    //auto a = GetWindowLong(hWnd, GWLP_HINSTANCE);
+  static void popBack(HWND hWnd) {
+    current_array->popBack();
+    Base::redirectTo(IDC_INT_SHOW_ARRAY);
+  }
+
+
+  static void popFront(HWND hWnd) {
+    current_array->popFront();
+    Base::redirectTo(IDC_INT_SHOW_ARRAY);
+  }
+  static void deleteArray(HWND hWnd, int param) {
+    DataBase::intArrays.erase(DataBase::intArrays.begin() + param);
     Base::redirectTo(IDC_INT_ARRAY);
+  }
+
+  static void editArray(HWND hWnd, int param) {
+    current_array = DataBase::intArrays[param];
+    Base::redirectTo(IDC_INT_SHOW_ARRAY);
   }
 };
 

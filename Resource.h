@@ -17,14 +17,20 @@
 #define IDC_STATIC				-1
 #endif
 // Next default values for new objects
-#define WM_HOME 99999
+#define EDIT_FIRST 202
+
+
+
+#define IDC_HOME 201
 #define IDC_INT_ARRAY 110
 #define IDC_INT_ARRAY_PUSH_BACK 111
 #define IDC_INT_ARRAY_PUSH_FRONT 112
 #define IDC_INT_ARRAY_POP_BACK 113
 #define IDC_INT_ARRAY_POP_FRONT 114
 #define IDC_INT_NEW_ARRAY 115
-#define IDC_INT_DESTROY_ARRAY 116
+#define IDC_INT_DESTROY_ARRAY 116 //never use something like *****...****116
+#define IDC_INT_EDIT_ARRAY 117 // ---==----
+#define IDC_INT_SHOW_ARRAY 118
 //
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
