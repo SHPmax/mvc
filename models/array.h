@@ -105,11 +105,14 @@ namespace mx {
       for (int i = 0; i < length; i++) {
         m.insert(_array[i]);
       }
-      T* temp = _array;
+      T* temp = new T[length];
+      int i = 0;
       for (auto& e : m) {
-        *temp = e;
-        temp++;
+        temp[i] = e;
+        i++;
       }
+      delete[]_array;
+      _array = temp;
 
     }
     std::string toString() {

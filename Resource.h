@@ -22,15 +22,25 @@
 
 
 #define IDC_HOME 201
+#define IDC_INT_SET 200
+#define IDC_INT_NEW_SET 203
 #define IDC_INT_ARRAY 110
 #define IDC_INT_ARRAY_PUSH_BACK 111
 #define IDC_INT_ARRAY_PUSH_FRONT 112
 #define IDC_INT_ARRAY_POP_BACK 113
 #define IDC_INT_ARRAY_POP_FRONT 114
 #define IDC_INT_NEW_ARRAY 115
+#define IDC_INT_DESTROY_SET 119 // never use something like *****...****116
 #define IDC_INT_DESTROY_ARRAY 116 //never use something like *****...****116
 #define IDC_INT_EDIT_ARRAY 117 // ---==----
+#define IDC_INT_EDIT_SET 123 // ---=----
 #define IDC_INT_SHOW_ARRAY 118
+#define IDC_CH_BOX 321
+#define IDC_INT_SHOW_SET 164
+#define IDC_INT_SET_INSERT 198
+#define IDC_INT_SET_PLUS 241
+#define IDC_INT_SET_MUL 231
+#define IDC_INT_SET_DEL 352
 //
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS

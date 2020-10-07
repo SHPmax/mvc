@@ -54,6 +54,17 @@ public:
     }
   }
 
+  static void CreateChBox(HWND hWnd, LPCTSTR name, const int x, const int y, const int width, const int height, UINT key, const int id, LPVOID pointer = NULL, BOOL update = false) {
+    if (update || !btnExist(id)) {
+      ids.insert(id);
+      CreateWindowExW(WS_EX_TRANSPARENT, L"BUTTON", L"",
+        WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+        x, y, width, height,
+        hWnd, (HMENU)key,
+        GetModuleHandle(NULL), 0);
+    }
+  }
+
   static BOOL Text(HDC hdc, const int x, const int y, LPCTSTR text, const UINT text_length) {
     return TextOut(hdc, x, y, text, text_length);
   }

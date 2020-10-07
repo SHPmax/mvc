@@ -34,6 +34,9 @@
     <Filter Include="Source Files\views\int_array">
       <UniqueIdentifier>{31cf21b5-278a-4931-86b7-4f69125b46e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\views\int_set">
+      <UniqueIdentifier>{be56d456-c012-4b63-acfc-80f8948d4a72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -86,6 +89,18 @@
     </ClInclude>
     <ClInclude Include="base\rout.h">
       <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="models\set.h">
+      <Filter>Source Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="controllers\int_set_controller.h">
+      <Filter>Source Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="views\int_set\index.h">
+      <Filter>Source Files\views\int_set</Filter>
+    </ClInclude>
+    <ClInclude Include="views\int_set\show.h">
+      <Filter>Source Files\views\int_set</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -30,8 +30,9 @@ public:
       }
       ViewHelper::CreateBtn(hWnd, "delete", 65 , y, 50, 35, i*1000 + IDC_INT_DESTROY_ARRAY , IDC_INT_NEW_ARRAY + 2*i + 1);
       ViewHelper::CreateBtn(hWnd, "edit", 10, y, 50, 35, i * 1000 + IDC_INT_EDIT_ARRAY, IDC_INT_NEW_ARRAY + 2*i);
-
     }
+    ViewHelper::CreateBtn(hWnd, "Home", 230, 10, 100, 50, IDC_HOME, -1);
+
 
     EndPaint(hWnd, &ps);
   }

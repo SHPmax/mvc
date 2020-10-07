@@ -28,9 +28,35 @@ bool Base::routing(HWND hWnd, unsigned int message, UINT msg, const bool paint) 
     IntArrayController::index(hWnd);
     return TRUE;
     break;
+  case IDC_INT_SET:
+    //if (!paint)
+    cleanScr(hWnd, paint, TRUE);
+    IntSetController::index(hWnd);
+    return TRUE;
+    break;
+  case IDC_INT_SET_INSERT:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::insert(hWnd);
+    return TRUE;
+    break;
   case IDC_INT_ARRAY_PUSH_BACK:
     cleanScr(hWnd, paint, FALSE);
     IntArrayController::pushBack(hWnd);
+    return TRUE;
+    break;
+  case IDC_INT_SET_PLUS:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::plus(hWnd);
+    return TRUE;
+    break;
+  case IDC_INT_SET_DEL:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::del (hWnd);
+    return TRUE;
+    break;
+  case IDC_INT_SET_MUL:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::mul(hWnd);
     return TRUE;
     break;
   case IDC_INT_ARRAY_PUSH_FRONT:
@@ -53,9 +79,19 @@ bool Base::routing(HWND hWnd, unsigned int message, UINT msg, const bool paint) 
     IntArrayController::newArray(hWnd);
     return TRUE;
     break;
+  case IDC_INT_NEW_SET:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::newSet(hWnd);
+    return TRUE;
+    break;
   case IDC_INT_SHOW_ARRAY:
     cleanScr(hWnd, paint, FALSE);
     IntArrayController::show(hWnd);
+    return TRUE;
+    break;
+  case IDC_INT_SHOW_SET:
+    cleanScr(hWnd, paint, FALSE);
+    IntSetController::show(hWnd);
     return TRUE;
     break;
   default:
@@ -76,11 +112,27 @@ bool Base::routing(HWND hWnd, unsigned int message, UINT msg, const bool paint) 
     return TRUE;
   }
   break;
+  case IDC_INT_DESTROY_SET:
+  {
+    //message = IDC_INT_DESTROY_ARRAY;
+    cleanScr(hWnd, paint, TRUE);
+    IntSetController::deleteSet(hWnd, param);
+    return TRUE;
+  }
+  break;
   case IDC_INT_EDIT_ARRAY:
   {
     //message = IDC_INT_DESTROY_ARRAY;
     cleanScr(hWnd, paint, TRUE);
     IntArrayController::editArray(hWnd, param);
+    return TRUE;
+  }
+  break;
+  case IDC_INT_EDIT_SET:
+  {
+    //message = IDC_INT_DESTROY_ARRAY;
+    cleanScr(hWnd, paint, TRUE);
+    IntSetController::editSet(hWnd, param);
     return TRUE;
   }
   break;

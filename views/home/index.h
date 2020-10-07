@@ -6,6 +6,7 @@ public:
     HDC hdc = BeginPaint(hWnd, &ps);
 
     ViewHelper::CreateBtn(hWnd, "Array", 10, 10, 100, 50, IDC_INT_ARRAY, -IDC_INT_ARRAY);
+    ViewHelper::CreateBtn(hWnd, "Set", 120, 10, 100, 50, IDC_INT_SET, -IDC_INT_SET);
 
 
     EndPaint(hWnd, &ps);

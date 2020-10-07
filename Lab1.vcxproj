@@ -145,17 +145,21 @@
     <ClInclude Include="base\view_helper.h" />
     <ClInclude Include="controllers\int_array_controller.h" />
     <ClInclude Include="controllers\home_controller.h" />
+    <ClInclude Include="controllers\int_set_controller.h" />
     <ClInclude Include="data_base.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="iterator.h" />
     <ClInclude Include="Lab1.h" />
     <ClInclude Include="models\array.h" />
+    <ClInclude Include="models\set.h" />
     <ClInclude Include="mvc.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="views\home\index.h" />
     <ClInclude Include="views\int_array\index.h" />
     <ClInclude Include="views\int_array\show.h" />
+    <ClInclude Include="views\int_set\index.h" />
+    <ClInclude Include="views\int_set\show.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lab1.cpp" />
